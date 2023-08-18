@@ -1,0 +1,26 @@
+Package: MC.Trend
+Type: Package
+Title: Monte Carlo Trend Analysis
+Version: 0.1.0
+Date: 2023-08-18
+Authors@R: person("Alonso", "Arriagada", email = "alonso.arriagada@usach.cl",role = c("aut", "cre"))
+Description: Monte Carlo Trend Analysis, based on: Ricchetti, (2018) <https://repositorio.uchile.cl/handle/2250/168487>.
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+Imports:
+    trend,
+    tidyverse,
+    reshape2,
+    ggplot2,
+    plyr,
+    magrittr,
+    lmomco,
+    MASS,
+    dplyr
+Suggests:
+    rmarkdown,
+    knitr
+VignetteBuilder: knitr
+Depends: R (>= 2.10)
+RoxygenNote: 7.2.3
