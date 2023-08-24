@@ -1,4 +1,4 @@
-Package: MC.Trend
+Package: MCTrend
 Type: Package
 Title: Monte Carlo Trend Analysis
 Version: 0.1.0
