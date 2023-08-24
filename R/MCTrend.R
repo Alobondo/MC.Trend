@@ -18,6 +18,8 @@
 
 MCTrend <- function(x, n_rep, plot_title, opt) {
 
+  X_obs <- Y_obs <- eq_x <- eq_y <- NULL # Evitar problemas con "Undefined global functions or variables"  al chequear paquete
+
   Model <- x %>% select(-1) %>% colnames() %>% as.data.frame() # Extrae nombre de los modelos o de las columnas
   MC_trend1 <- data.frame(Model, Model) # Crea un DF auxiliar de 2 columnas, 1a para los nombres y 2a para los valores de la tendencia
   colnames(MC_trend1) <- c('Model','MC_trend') # Cambia nombre de los encabezados del DF
