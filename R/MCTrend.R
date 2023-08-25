@@ -2,6 +2,8 @@
 #'
 #' This function performs Monte Carlo trend analysis on input data and generates plots.
 #'
+#' @export
+#'
 #' @param x A data frame containing the input data. The first raw expected to contain model names or time series names.
 #' @param n_rep Number of replications for the Monte Carlo simulation.
 #' @param plot_title Title for the plot.
