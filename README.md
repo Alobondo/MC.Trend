@@ -17,6 +17,9 @@ library(MCTrend)
 Functions | Description |
 --- | --- |
 ```MCTrend()``` | Apply the Monte Carlo Trend test to hydrological time series. |
+
+Parameters | Description |
+--- | --- |
 ```x``` | A data frame containing the input data. The first raw expected to contain model names or time series names. |
 ```n_rep``` | Number of replications for the Monte Carlo simulation. |
 ```plot_title``` | Title for the plot. |
