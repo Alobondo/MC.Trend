@@ -1,5 +1,6 @@
 # MCTrend
 Monte Carlo time series trend analysis.
+Based on: Ricchetti, (2018) <https://repositorio.uchile.cl/handle/2250/168487>
 
 # Requirements
 Dependencies:
@@ -24,6 +25,9 @@ Parameters | Description |
 ```n_rep``` | Number of replications for the Monte Carlo simulation. |
 ```plot_title``` | Title for the plot. |
 ```opt``` | A number indicating type of results, for opt = 1 returns test result, opt = 2 returns plot. |
+
+# File for example
+To download a file with the reference format follow this path: https://rb.gy/4jfqk
 
 # Reporting bugs
 If you find an error in some function, want to report a typo in the documentation or submit a recommendation, you can do it [here](https://github.com/Alobondo/MCTrend/issues)
