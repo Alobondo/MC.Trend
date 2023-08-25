@@ -88,11 +88,11 @@ MCTrend <- function(x, n_rep, plot_title, opt) {
                color='blue', shape=0, size=2.5, stroke = 1) +
 
     geom_text(data=long_format_Obs,
-              aes(x = -1.5,y = 0.8,
+              aes(x = -1.0,y = 0.8,
                   label = eq_x),
               size = 3, parse = TRUE, inherit.aes=FALSE, color = 'blue') +
     geom_text(data=long_format_Obs,
-              aes(x = -1.5,y = 0.65,
+              aes(x = -1.0,y = 0.65,
                   label = eq_y),
               size = 3, parse = TRUE, inherit.aes=FALSE, color = 'blue') +
 
@@ -105,7 +105,9 @@ MCTrend <- function(x, n_rep, plot_title, opt) {
 
   # Se entregan resultados
   if(opt == 1) {
-    return(MC_trend1)
+    result_DF <- data.frame(MC_trend1, Obs_sen_slope_Aux)
+    colnames(result_DF)[2:3] <- c( "Y_obs", "X_obs")
+    return(result_DF)
   } else {
     return(plot1)
   }
