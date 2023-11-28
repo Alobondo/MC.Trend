@@ -21,7 +21,7 @@ Functions | Description |
 
 Parameters | Description |
 --- | --- |
-```x``` | A data frame containing the input data. The first raw expected to contain model names or time series names. |
+```x``` | A data frame containing the input data. The first row expected to contain model names or time series names. |
 ```n_rep``` | Number of replications for the Monte Carlo simulation. |
 ```plot_title``` | Title for the plot. |
 ```opt``` | A number indicating type of results, for opt = 1 returns test result, opt = 2 returns plot. |
@@ -30,7 +30,7 @@ Parameters | Description |
 To download a file with the reference format follow this path: https://rb.gy/4jfqk
 
 # Reporting bugs
-If you find an error in some function, want to report a typo in the documentation or submit a recommendation, you can do it [here](https://github.com/Alobondo/MCTrend/issues)
+If you find an error in any function, want to report a typo in the documentation or submit a recommendation, you can do it [here](https://github.com/Alobondo/MCTrend/issues)
 
 # Keywords
 Hydrology, R package, Time Series, Monte-Carlo
