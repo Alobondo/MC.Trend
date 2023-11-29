@@ -4,7 +4,7 @@
 \alias{MCTrend}
 \title{Monte Carlo Trend Analysis}
 \usage{
-MCTrend(x, n_rep, plot_title, opt)
+MCTrend(x, n_rep, plot_title, int = 0.25, opt)
 }
 \arguments{
 \item{x}{A data frame containing the input data. The first raw expected to contain model names or time series names.}
@@ -12,6 +12,8 @@ MCTrend(x, n_rep, plot_title, opt)
 \item{n_rep}{Number of replications for the Monte Carlo simulation.}
 
 \item{plot_title}{Title for the plot.}
+
+\item{int}{A number indicating lower threshold value of the interval within which no trend is defined, the upper value is calculated based on this value, by default a lower value of 0.25 is considered.}
 
 \item{opt}{A number indicating type of results, for opt = 1 returns test result, opt = 2 returns plot}
 }
