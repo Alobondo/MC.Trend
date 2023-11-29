@@ -108,8 +108,8 @@ MCTrend <- function(x, n_rep, plot_title, int = 0.25, opt) {
   # Se entregan resultados
   if(opt == 1) {
     result_DF <- data.frame(MC_trend1, Obs_sen_slope_Aux)
-    result_DF %<>% mutate(Test = ifelse((MC_trend < int) | (MC_trend > (1 - int)), 'Trend', 'No trend'))
-    colnames(result_DF)[2:3] <- c( "Y_obs", "X_obs")
+    result_DF %<>% mutate(Test = ifelse((result_DF$MC_trend < int) | (result_DF$MC_trend > (1 - int)), 'Trend', 'No trend'))
+    colnames(result_DF)[2:3] <- c("Y_obs", "X_obs")
     return(result_DF)
   } else {
     return(plot1)
