@@ -23,8 +23,8 @@ Parameters | Description |
 --- | --- |
 ```x``` | A data frame containing the input data. The first row expected to contain model names or time series names. |
 ```n_rep``` | Number of replications for the Monte Carlo simulation. |
-```int``` | Number indicating lower threshold value of the interval within which no trend is defined, the upper value is calculated based on this value, by default a lower value of 0.25 is considered. |
 ```plot_title``` | Title for the plot. |
+```int``` | Number indicating lower threshold value of the interval within which no trend is defined, the upper value is calculated based on this value, by default a lower value of 0.25 is considered. |
 ```opt``` | A number indicating type of results, for opt = 1 returns test result, opt = 2 returns plot. |
 
 # File for example
