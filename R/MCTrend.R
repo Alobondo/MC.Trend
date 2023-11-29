@@ -7,6 +7,7 @@
 #' @param x A data frame containing the input data. The first raw expected to contain model names or time series names.
 #' @param n_rep Number of replications for the Monte Carlo simulation.
 #' @param plot_title Title for the plot.
+#' @param int A number indicating lower threshold value of the interval within which no trend is defined, the upper value is calculated based on this value, by default a lower value of 0.25 is considered.
 #' @param opt A number indicating type of results, for opt = 1 returns test result, opt = 2 returns plot
 #' @return A data frame and a plot containing results of the trend analysis.
 #'
@@ -18,7 +19,7 @@
 #' @importFrom trend sens.slope
 #'
 
-MCTrend <- function(x, n_rep, plot_title, opt) {
+MCTrend <- function(x, n_rep, plot_title, int = 0.25, opt) {
 
   X_obs <- Y_obs <- eq_x <- eq_y <- NULL # Evitar problemas con "Undefined global functions or variables"  al chequear paquete
 
@@ -27,10 +28,10 @@ MCTrend <- function(x, n_rep, plot_title, opt) {
   colnames(MC_trend1) <- c('Model','MC_trend') # Cambia nombre de los encabezados del DF
 
 
-  T_S_MC_slope <- list() # Lista axiliar vacia
-  WEI_T_S <- list() # Lista axiliar vacia
-  Obs_sen_slope <- list() # Lista axiliar vacia
-  Quawei_T_S <- list() # Lista axiliar vacia
+  T_S_MC_slope <- list() # Lista auxiliar vacia
+  WEI_T_S <- list() # Lista auxiliar vacia
+  Obs_sen_slope <- list() # Lista auxiliar vacia
+  Quawei_T_S <- list() # Lista auxiliar vacia
 
   for (i in 2:dim(x)[2]){
     v <- x[,i]
@@ -77,9 +78,9 @@ MCTrend <- function(x, n_rep, plot_title, opt) {
   names(labels) <- c("Model", "Real")
 
   plot1 <- ggplot(long_format_MC_trend, aes(x=CDF_Empirica, y=Probabilidad, group = 1)) +
-    geom_rect(aes(xmin = -Inf, xmax = Inf, ymin = 0.75, ymax = Inf),
+    geom_rect(aes(xmin = -Inf, xmax = Inf, ymin = (1 - int), ymax = Inf),
               fill = "pink", alpha = 0.01) +
-    geom_rect(aes(xmin = -Inf, xmax = Inf, ymin = -Inf, ymax = 0.25),
+    geom_rect(aes(xmin = -Inf, xmax = Inf, ymin = -Inf, ymax = int),
               fill = "pink", alpha = 0.01) +
 
     geom_line(aes(color = Model),linetype = 'solid', linewidth = 2)+
@@ -100,12 +101,14 @@ MCTrend <- function(x, n_rep, plot_title, opt) {
     theme_light() +
     labs(title = plot_title,
          subtitle='Monte-Carlo trend test',
+         caption = 'Dashed line corresponds to real data, solid color line corresponds to the model',
          y = 'F(x)', x = 'Slope [mm/yr]') +
     theme(legend.position="none")
 
   # Se entregan resultados
   if(opt == 1) {
     result_DF <- data.frame(MC_trend1, Obs_sen_slope_Aux)
+    result_DF %<>% mutate(Test = ifelse((MC_trend < int) | (MC_trend > (1 - int)), 'Trend', 'No trend'))
     colnames(result_DF)[2:3] <- c( "Y_obs", "X_obs")
     return(result_DF)
   } else {
