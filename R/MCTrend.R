@@ -17,7 +17,17 @@
 #' @importFrom lmomco parwei lmoms cdfwei pp quawei
 #' @importFrom magrittr %<>% %>%
 #' @importFrom trend sens.slope
-#' @importFrom readr read_csv
+#'
+#' @examples
+#'
+#'   # file for example
+#'   file <- MCTrend::example
+#'
+#'   # Apply the test
+#'   MCTrend::MCTrend(x = file, n_rep = 100, plot_title = 'Precipitaciones', int = 0.1, opt = 1)
+#'
+#'   # plot of the result of the test
+#'   MCTrend::MCTrend(x = file, n_rep = 100, plot_title = 'Precipitaciones', int = 0.1, opt = 2)
 #'
 
 MCTrend <- function(x, n_rep, plot_title, int = 0.25, opt) {

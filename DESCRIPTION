@@ -14,8 +14,7 @@ Imports:
     ggplot2,
     magrittr,
     lmomco,
-    dplyr,
-    readr 
+    dplyr
 Suggests:
     rmarkdown,
     knitr,
