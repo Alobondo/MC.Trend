@@ -9,7 +9,10 @@
 #' @param plot_title Title for the plot.
 #' @param int A number indicating lower threshold value of the interval within which no trend is defined, the upper value is calculated based on this value, by default a lower value of 0.25 is considered.
 #' @param opt A number indicating type of results, for opt = 1 returns test result, opt = 2 returns plot
+#'
+#'
 #' @return A data frame and a plot containing results of the trend analysis.
+#'
 #'
 #' @importFrom dplyr select relocate mutate
 #' @importFrom reshape2 melt
