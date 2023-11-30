@@ -17,6 +17,7 @@
 #' @importFrom lmomco parwei lmoms cdfwei pp quawei
 #' @importFrom magrittr %<>% %>%
 #' @importFrom trend sens.slope
+#' @importFrom readr read_csv
 #'
 
 MCTrend <- function(x, n_rep, plot_title, int = 0.25, opt) {
@@ -35,7 +36,7 @@ MCTrend <- function(x, n_rep, plot_title, int = 0.25, opt) {
 
   for (i in 2:dim(x)[2]){
     v <- x[,i]
-    set.seed(1234+i)
+    set.seed(i)
     result <- as.data.frame(replicate(n_rep, sample(v, dim(x)[1], replace = FALSE)))  # n_rep es el numero de replicas o repeticiones desordenadas del vector original
     T_S_MC <- result %>% apply(2,sens.slope) # Se obtienen las pendientes de sen de cada replica
     T_S_MC_slope[i-1] <- data.frame(Sen_slope = sapply(T_S_MC, function(x){as.numeric(x[1])}))

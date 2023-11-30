@@ -43,4 +43,4 @@ Parameters | Description |
 ```opt``` | A number indicating type of results, for opt = 1 returns test result, opt = 2 returns plot. |
 
 ## File for example
-To download a file with the reference format follow this path: https://rb.gy/4jfqk
+To download a file with the reference format follow this path: https://github.com/Alobondo/Trend_and_Stationarity_Tests/raw/main/PP_T%26S_test.xlsx

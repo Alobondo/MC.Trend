@@ -23,3 +23,18 @@ A data frame and a plot containing results of the trend analysis.
 \description{
 This function performs Monte Carlo trend analysis on input data and generates plots.
 }
+
+\examples{
+
+  # file for example
+  file <- as.data.frame(na.omit(readr::read_csv('https://raw.githubusercontent.com/Alobondo/Trend_and_Stationarity_Tests/main/PP_T%26S_test.csv')))
+
+  # Apply the test
+  MCTrend::MCTrend(x = file, n_rep = 100, plot_title = 'Precipitaciones', int = 0.1, opt = 1)
+
+  # plot of the result of the test
+  MCTrend::MCTrend(x = file, n_rep = 100, plot_title = 'Precipitaciones',int = 0.1, opt = 2)
+
+
+}
+
