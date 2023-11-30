@@ -23,8 +23,6 @@ A data frame and a plot containing results of the trend analysis.
 \description{
 This function performs Monte Carlo trend analysis on input data and generates plots.
 }
-}
-
 \examples{
 
   # file for example
@@ -37,4 +35,3 @@ This function performs Monte Carlo trend analysis on input data and generates pl
   MCTrend::MCTrend(x = file, n_rep = 100, plot_title = 'Precipitaciones',int = 0.1, opt = 2)
 
 }
-
