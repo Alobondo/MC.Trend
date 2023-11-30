@@ -1,4 +1,4 @@
-# MCTrend <img src="man/figures/MC_Trend_logo.png" align="right" />
+# MCTrend <img src="man/figures/MC_Trend_logo.png" align="right" width="60px" height="20px" />
 Monte Carlo time series trend analysis.
 Based on: Ricchetti, (2018) <https://repositorio.uchile.cl/handle/2250/168487>
 
