@@ -7,7 +7,11 @@ Dependencies:
   trend, reshape2, ggplot2, magrittr, lmomco, dplyr
 
 # Installation
-You can install the development version of **MCTrend** from GitHub with this R command:
+You can install the currently-released version of **MCTrend** from CRAN with this R command:
+```
+install.packages("MCTrend")
+```
+Alternatively, you can install the development version from GitHub with:
 ```
 # install.packages("remotes")
 remotes::install_github("Alobondo/MCTrend")
